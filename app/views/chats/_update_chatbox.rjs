@@ -1,0 +1,2 @@
+#page.replace_html 'online_user_totals', @online_user_totals
+#page.assign 'online_user_totals', @online_user_totals

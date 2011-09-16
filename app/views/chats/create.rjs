@@ -1,0 +1,10 @@
+#page.alert($(@chat.dom_id).innerHTML+ '- id -'+ @chat.dom_id);
+#page.insert_html :bottom, @chat.dom_id, :partial => 'chat', :collection => @chats
+#page.assign 'lastChatID', @chats.last.id
+
+page.insert_html :bottom, 'chats', :partial => 'chat', :locals => {:chat => @chat}
+page[@chat.dom_id].scrollIntoView(false);
+page.assign 'lastChatID', @chat.dom_id
+page['chat_form'].reset()
+page << render(:partial => "total")
+

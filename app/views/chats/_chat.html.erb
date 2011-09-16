@@ -1,0 +1,8 @@
+<div class="<%= chat.dom_id%>">
+  <br style="clear:both"/>
+  <div id="<%= chat.dom_id%>" class="chat">
+	(<small><%= chat.userName%></small>) <%= remove_code_helper chat.text%>
+  </div>
+</div>
+<%= render :partial => "check_chat", :locals => {:chat => chat}%>
+

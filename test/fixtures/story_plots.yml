@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  bot_story_id: 1
+  message: MyText
+
+two:
+  bot_story_id: 1
+  message: MyText

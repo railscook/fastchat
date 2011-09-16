@@ -1,0 +1,18 @@
+<h1>Listing onlines</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @onlines.each do |online| %>
+  <tr>
+    <td><%= link_to 'Show', online %></td>
+    <td><%= link_to 'Edit', edit_online_path(online) %></td>
+    <td><%= link_to 'Destroy', online, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New online', new_online_path %>

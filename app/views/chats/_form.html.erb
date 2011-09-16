@@ -1,0 +1,7 @@
+<div>
+<% form_remote_tag :url => {:action => 'create'}, :html => {:id => 'chat_form'} do %>
+ <%=text_area 'chat', 'text', :size => "80x2", :onKeyPress=>"return submitenter(this,event)" %>
+ <%= submit_tag 'Add New Chat', :id => "form_submit_button" %>
+<% end %>
+</div>
+

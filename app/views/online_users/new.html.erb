@@ -1,0 +1,11 @@
+<h1>New online_user</h1>
+
+<% form_for(@online_user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', online_users_path %>

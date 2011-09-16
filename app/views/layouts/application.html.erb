@@ -1,0 +1,62 @@
+<html>
+<head>
+	<meta name="google-site-verification" content="1V-5Rms2QDIPb-epfxCfT_49oql60EYFzKL1NNt-kfk" /> 
+	<title>ShweCommunity FastChat</title>
+
+<%= javascript_include_tag :defaults %>
+
+<style>
+body { font-family: Helvetica;}
+h3 {margin:0;}
+label { min-width: 100px; display: inline-block;}
+form { padding: 1em; margin-top: 1em; background-color: #cccccc;}
+.super_special{font-weight: bold;}
+#chats{overflow-x: hidden; overflow-y: scroll; font-size: small;}
+#chats div.chat {margin:0 0 -13px 0;-webkit-border-radius:10px;-moz-border-radius: 10px;border-radius:10px; height:20px; background: lightblue; padding: 0 0 0 10px;}
+#menu{position: fixed; right: 0; top: 0; }
+#online_users{ float:right; margin: 35px 0 0 10px;}
+#form_submit_button {position: fixed;}
+</style>
+
+</head>
+<body>
+<p style="color: green"><%= flash[:notice] %></p>
+<div id="content">
+<%= yield %>
+</div>
+<script>
+    function submitenter(myfield,e)
+    {
+        var keycode;
+        if (window.event) keycode = window.event.keyCode;
+        else if (e) keycode = e.which;
+        else return true;
+	if(keycode == 13){
+           if($('chat_text').value.length > 0) $("form_submit_button").click();
+      	   return false;   
+	}else{
+              return true;
+	}
+    }
+
+ var ttime = 1500;
+ setTimeout('loading()', ttime);
+
+  function loadConversation(message_id) {
+    new Ajax.Request('/chats/show/'+message_id, {asynchronous:true, evalScripts:false});
+  }
+
+ function loading(){
+  if($('chats')){
+   var h = window.innerHeight-$('chat_form').offsetHeight-$('header').offsetHeight-100;
+   $('chats').style.height = h+'px';
+  }
+  if($('lastChatID')) loadConversation($('lastChatID').innerHTML); 
+  setTimeout('loading()', ttime);
+ 
+ }
+</script>
+
+</body>
+</html>
+

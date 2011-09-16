@@ -1,0 +1,37 @@
+<div style="margin:0 auto; width: 320px;">
+            <div style=" margin-top: 7px; text-align: center;">
+                <span style="font-size: 150%;" id="welcome">Welcome to ShweCommunity<sup>.</sup></span><br>
+                <!--n style="font-size: 17px" id="by">by <a class="panel" target="_blank" href="http://www.swezin.com/">swe (wewe)</a></span> -->
+            </div>
+   
+            <!--<img src="/logo.png" style="vertical-align: middle" width="59" height="60">-->
+
+<style>
+ body {
+  font-size: 100%;
+ }
+ .h_button{
+      text-align: center; float:right;margin: 5px;width:130px; -moz-border-radius:9px; -webkit-border-radius: 9px; border: 1px solid #999;font-size:16px; padding: 9px;
+  }
+</style>
+
+
+<div>
+<div class="h_button">
+<a href="">Create Account</a>
+</div>
+
+<div class="h_button">
+   <% if session[:token].nil? -%>
+      <%= 'AuthSub session token: ' + session[:token] if session[:token] %>
+      <%=link_to('Sign In', @authsub_link) %>
+    <% else -%>
+        <span><%= link_to "Logout", "/accounts/logout"%> </span>
+	<%= session[:users_email]%>
+    <% end -%>
+</div>
+</div>
+
+<hr style="clear:both; color: 333"/>
+<%= render(:partial => "form") if session[:token]%>
+</div>

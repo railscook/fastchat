@@ -1,0 +1,9 @@
+unless @chats.empty?
+#page << "alert($('#{@chat.dom_id}').innerHTML);"
+#page.alert @chat.dom_id
+page.replace_html 'lastChatID', @chats.last.id
+page.assign 'lastChatID', @chats.last.id
+page.insert_html :bottom, 'chats', :partial => 'chat', :collection => @chats
+page[@chats.last.dom_id].scrollIntoView(false);
+end
+page << render(:partial => 'total')

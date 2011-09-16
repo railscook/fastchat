@@ -1,0 +1,11 @@
+core.*
+config/database.yml
+log/
+tmp/
+.idea/*
+db/schema.rb
+public/Users/*
+public/Scripts/*
+public/chat
+public/chat/*
+

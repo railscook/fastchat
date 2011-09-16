@@ -1,0 +1,9 @@
+<% form_for :user, :url => {:action => 'login'}, :html => {:id => 'user_form'} do  %>
+ <%= label :user, :login %>
+ <%=text_field 'user', 'login' %> <br/>
+ <%= label :user, :password %>
+ <%= password_field 'user', 'password' %> <br/>
+ <%= submit_tag 'Login', :id => "form_submit_button" %>
+<% end %>
+
+

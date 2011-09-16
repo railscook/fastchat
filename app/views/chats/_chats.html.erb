@@ -1,0 +1,5 @@
+<div id="chats">
+	<div id="lastChatID" style="display: none"><%= @chats.last.id%></div>
+        <%= render :partial => "chat", :collection => @chats%>
+</div>
+

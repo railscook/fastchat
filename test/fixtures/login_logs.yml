@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  username: MyString
+  userid: 1
+  userrole: MyString
+  status: false
+
+two:
+  username: MyString
+  userid: 1
+  userrole: MyString
+  status: false

@@ -1,0 +1,11 @@
+<h1>New online</h1>
+
+<% form_for(@online) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', onlines_path %>

@@ -1,0 +1,15 @@
+<div id="header"><h3> Shwe Community Chat </h3></div>
+<div id='menu'>
+        Totals: <span id="online_user_totals"><%= @online_users.count %></span> |
+        <%= link_to_function "Hide Online List", toogle_links('online_users','hide') %> | 
+        <%= link_to_function "Show Online List", toogle_links('online_users','show') %> |
+	<span><%= link_to "Logout", "/accounts/logout"%> </span>
+</div>
+<div id="online_users" style="display: none;">
+        <%= render :partial => "online_user", :collection => @online_users%>
+</div>
+<%= render :partial => "chats"%>
+
+<%= render :partial => "form" %>
+
+<%#= render :partial => "update_chatbox"%>

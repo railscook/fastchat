@@ -1,0 +1,2 @@
+page.visual_effect :highlight, @chat.dom_id, :startcolor => "#ff0000"
+

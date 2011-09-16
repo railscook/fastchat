@@ -1,0 +1,2 @@
+page.remove @chat.dom_id
+page << render(:partial => "totals")

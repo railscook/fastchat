@@ -1,0 +1,12 @@
+<h1>Editing online_user</h1>
+
+<% form_for(@online_user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @online_user %> |
+<%= link_to 'Back', online_users_path %>
